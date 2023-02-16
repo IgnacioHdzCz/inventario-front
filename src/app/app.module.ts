@@ -1,16 +1,25 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
+import { ToolbarModule } from 'primeng/toolbar';
+import {TableModule} from 'primeng/table';
 import { AppComponent } from './app.component';
+import { InventarioService } from './medicamentos/data.service';
+import { MedicamentosComponent } from './medicamentos/medicamentos.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MedicamentosComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    HttpClientModule,
+    ToolbarModule,
+    TableModule
+
   ],
-  providers: [],
+  providers: [InventarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
